@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+    background: rgba(0,100,0.5);
+    font-family: "helvetica neue", sans-serif;
+    font-weight: 100;
+    font-size:30px;
+}
+:root{
+   --base:red;
+   --spacing:40px;
+   --blur:5px;
+   --height:20vh;
+   --width:10px;
+   --radius:5px;
+}
+.text-center {
+    text-align: center;
+}
+img{
+    position: absolute;
+    margin: 100px -120px;
+    height: 170px;
+    width: 170px;
+    padding: var(--spacing);
+    background:var(--base);
+    filter: blur(var(--blur));
+    transition: all .5s;
+    height: var(--height);
+    width: var(--width);
+    border-radius: var(--radius);
+}
+h2{
+    color: var(--base);
+}
+input {width: 200px;}

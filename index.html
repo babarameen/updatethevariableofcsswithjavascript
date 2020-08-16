@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Range</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h2>Update variables of Css with JS</h2>
+
+    <div class="controls">
+        <label for="spacing"> Spacing:</label>
+        
+        <input type="range" id="spacing" name="spacing" min="10" max="200" value="30" data-sizing="px" />
+        <label for="blur">Blur:</label>
+        <input type="range" id="blur" min="0" max="25" value="5" data-sizing="px" name="blur">
+
+        <label for="base">Base Color</label>
+        <input type="color" name="base" id="base" value="#ffc630"> <br>
+        <label for="height">Height</label>
+        <input type="range" name="height" id="height" value="20" min="10" max="100" data-sizing="px">
+        <label for="width"></label>
+        <input type="range" name="width" id="width" value="20" data-sizing="px">
+        <label for="radius"></label>
+        <input type="range" name="radius" id="radius" value="10" min="10" max="100" data-sizing="px">
+      
+    </div>
+    <img src="1.jpg">
+</body>
+<script>
+    
+    
+        var inputs = document.querySelectorAll('input')
+        inputs.forEach((input)=>{input.addEventListener('change', handle)})
+        function handle(){
+            console.log(this.name);
+
+            document.documentElement.style.setProperty(`--${this.name}`,`${this.value}${this.dataset.sizing || ""}`)
+        }
+    
+</script>
+
+</html>
